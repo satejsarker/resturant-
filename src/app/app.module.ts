@@ -13,12 +13,16 @@ import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
+import { DishdetailPage } from '../pages/dishdetail/dishdetail';
+import { MenuPage } from '../pages/menu/menu';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    DishdetailPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    DishdetailPage,
+    MenuPage,
   ],
   providers: [
     StatusBar,
