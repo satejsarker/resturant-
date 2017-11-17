@@ -1,11 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform ,ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { MenuPage } from '../pages/menu/menu';
+import { FavoritesPage } from '../pages/favorites/favorites';
+import { ReservationPage } from '../pages/reservation/reservation';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -15,18 +18,24 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string,icon: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public modalCtrl:ModalController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      {title:'menu',component:MenuPage}
+      { title: 'Home' ,icon: 'home',component: HomePage },
+      { title: 'List',icon: 'list-box' ,component: ListPage },
+      {title:'menu',icon: 'list-box',component:MenuPage},
+      {title:'favorites',icon: 'heart',component:FavoritesPage}
+
     ];
 
+  }
+  openReserve(){
+    let modal=this.modalCtrl.create(ReservationPage);
+    modal.present();
   }
 
   initializeApp() {

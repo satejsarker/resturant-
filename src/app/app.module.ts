@@ -15,6 +15,9 @@ import { PromotionProvider } from '../providers/promotion/promotion';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
 import { DishdetailPage } from '../pages/dishdetail/dishdetail';
 import { MenuPage } from '../pages/menu/menu';
+import { FavoriteProvider } from '../providers/favorite/favorite';
+import { FavoritesPage } from '../pages/favorites/favorites';
+import { ReservationPage } from '../pages/reservation/reservation';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     ListPage,
     DishdetailPage,
-    MenuPage
+    MenuPage,
+    FavoritesPage,
+    ReservationPage
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,8 @@ import { MenuPage } from '../pages/menu/menu';
     ListPage,
     DishdetailPage,
     MenuPage,
+    FavoritesPage,
+    ReservationPage
   ],
   providers: [
     StatusBar,
@@ -47,7 +54,8 @@ import { MenuPage } from '../pages/menu/menu';
     LeaderProvider,
     PromotionProvider,
     ProcessHttpmsgProvider,
-    { provide: 'BaseURL', useValue: baseURL }
+    { provide: 'BaseURL', useValue: baseURL },
+    FavoriteProvider
   ]
 })
 export class AppModule {}

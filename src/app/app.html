@@ -1,17 +1,21 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-    </ion-list>
-  </ion-content>
+            <button color="primary-pale" menuClose ion-item (click)="openReserve()">
+              <ion-icon name="restaurant" item-left></ion-icon>
+              Reserve Table
+      </button>
+        </ion-list>
+    </ion-content>
 
 </ion-menu>
 
